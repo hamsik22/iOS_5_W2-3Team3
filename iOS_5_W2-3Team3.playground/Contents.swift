@@ -9,10 +9,10 @@ class Calculator {
         // 값의 범위 확인
         var isInRange: Bool = { String(result).count < 16 }()
         // 정수인지 확인
-        var isInterger: Bool = { result.truncatingRemainder(dividingBy: 1) == 0 }()
+        var isInteger: Bool = { result.truncatingRemainder(dividingBy: 1) == 0 }()
         
         // 값이 범위 내에 있으며 정수값일 때,
-        if isInRange && isInterger {
+        if isInRange && isInteger {
             print("Add : \(Int(result))")
         // 값이 범위 내에 있으며 실수값일 때,
         } else if isInRange && !isInterger {
@@ -30,13 +30,13 @@ class Calculator {
         // 값의 범위 확인
         var isInRange: Bool = { String(result).count < 16 }()
         // 정수인지 확인
-        var isInterger: Bool = { result.truncatingRemainder(dividingBy: 1) == 0 }()
+        var isInteger: Bool = { result.truncatingRemainder(dividingBy: 1) == 0 }()
         
         // 값이 범위 내에 있으며 정수값일 때,
-        if isInRange && isInterger {
+        if isInRange && isInteger {
             print("Sub : \(Int(result))")
         // 값이 범위 내에 있으며 실수값일 때,
-        } else if isInRange && !isInterger {
+        } else if isInRange && !isInteger {
             print("Sub : \(result)")
         // 그 외,
         } else {
@@ -51,10 +51,10 @@ class Calculator {
         // 값의 범위 확인
         var isInRange: Bool = { String(result).count < 16 }()
         // 정수인지 확인
-        var isInterger: Bool = { result.truncatingRemainder(dividingBy: 1) == 0 }()
+        var isInteger: Bool = { result.truncatingRemainder(dividingBy: 1) == 0 }()
         
         // 값이 범위 내에 있으며 정수값일 때,
-        if isInRange && isInterger {
+        if isInRange && isInteger {
             print("Multi : \(Int(result))")
         // 값이 범위 내에 있으며 실수값일 때,
         } else if isInRange && !isInterger {
@@ -88,13 +88,13 @@ class Calculator {
         // 값의 범위 확인
         var isInRange: Bool = { String(result).count < 16 }()
         // 정수인지 확인
-        var isInterger: Bool = { result.truncatingRemainder(dividingBy: 1) == 0 }()
+        var isInteger: Bool = { result.truncatingRemainder(dividingBy: 1) == 0 }()
         
         // 값이 범위 내에 있으며 정수값일 때,
         if isInRange && isInterger {
             print("Remain : \(Int(result))")
         // 값이 범위 내에 있으며 실수값일 때,
-        } else if isInRange && !isInterger {
+        } else if isInRange && !isInteger {
             print("Remain : \(result)")
         // 그 외,
         } else {
