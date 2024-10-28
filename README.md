@@ -4,9 +4,18 @@
 # 프로젝트 설명
 `Swift`로 계산기 만들기
 
-## 코드 컨벤션
+## 컨벤션
+
+### 코드
  - IBAction : ~Tapped()
  - IBOutlet : ~Label, ~Button
+
+### 커밋
+
+- [Feat]: 기능 구현
+- [Fix]: 코드 수정, 오류 해결
+- [Refact]: 코드 리팩토링
+- [etc]: 주석 수정 등등
 
 # Mission Board
 - [ ] Level 1(~10/28): 더하기, 뺴기, 나누기, 곱하기 연산의 `Caculator` 클래스 만들기
