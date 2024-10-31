@@ -65,7 +65,7 @@ calculator.modulusOperation.perform(firstOperand: 10, secondOperand: 20)
 // MARK: 더하기
 struct AddOperation {
     
-    mutating func perform(firstOperand: Float, secondOperand: Float) {
+    func perform(firstOperand: Float, secondOperand: Float) {
         // 결과값 저장
         var result = firstOperand + secondOperand
         // 값의 범위 확인
@@ -88,6 +88,7 @@ struct AddOperation {
 
 // MARK: 빼기
 struct SubtractOperation {
+    
     func perform(firstOperand: Float, secondOperand: Float) {
         // 결과값 저장
         var result = firstOperand - secondOperand
@@ -110,6 +111,7 @@ struct SubtractOperation {
 }
 // MARK: 곱하기
 struct MultiplyOperation {
+    
     func perform(firstOperand: Float, secondOperand: Float) {
         // 결과값 저장
         var result = firstOperand * secondOperand
@@ -132,6 +134,7 @@ struct MultiplyOperation {
 }
 // MARK: 나누기
 struct DivideOperation {
+    
     func perform(firstOperand: Float, secondOperand: Float) {
         // 결과값 저장
         var result = firstOperand / secondOperand
@@ -149,6 +152,7 @@ struct DivideOperation {
 }
 // MARK: 나머지 연산
 struct ModularOperation {
+    
     func perform(firstOperand: Float, secondOperand: Float) {
         // 결과값 저장
         var result = firstOperand.remainder(dividingBy: secondOperand)
