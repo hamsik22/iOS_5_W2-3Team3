@@ -87,7 +87,7 @@ struct AddOperation {
 }
 
 // MARK: 빼기
-struct SubtractOperation {
+public struct SubtractOperation {
     
     func perform(firstOperand: Float, secondOperand: Float) {
         // 결과값 저장
@@ -109,8 +109,9 @@ struct SubtractOperation {
         }
     }
 }
+
 // MARK: 곱하기
-struct MultiplyOperation {
+public struct MultiplyOperation {
     
     func perform(firstOperand: Float, secondOperand: Float) {
         // 결과값 저장
@@ -133,7 +134,7 @@ struct MultiplyOperation {
     }
 }
 // MARK: 나누기
-struct DivideOperation {
+public struct DivideOperation {
     
     func perform(firstOperand: Float, secondOperand: Float) {
         // 결과값 저장
@@ -151,7 +152,7 @@ struct DivideOperation {
     }
 }
 // MARK: 나머지 연산
-struct ModularOperation {
+public struct ModularOperation {
     
     func perform(firstOperand: Float, secondOperand: Float) {
         // 결과값 저장
@@ -172,15 +173,4 @@ struct ModularOperation {
             print("값이 너무 커요!")
         }
     }
-}
-
-/// 계산 결과에 대한 기능등을 구현해야함
-/// 반복적인 코드이지만 필요한 기능임
-/// 추후 타입 메서드로 구현할 가능성도 생각이 듬
-protocol AbstractOperation {
-    func addition(firstOperand: Float, secondOperand: Float)
-    func subtraction(firstOperand: Float, secondOperand: Float)
-    func multiplication(firstOperand: Float, secondOperand: Float)
-    func division(firstOperand: Float, secondOperand: Float)
-    func modular(firstOperand: Float, secondOperand: Float)
 }
