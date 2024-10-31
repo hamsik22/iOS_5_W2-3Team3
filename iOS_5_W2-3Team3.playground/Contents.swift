@@ -22,13 +22,13 @@ import UIKit
 /// 5. 복합 연산일 경우 :
 ///
 /// 파라미터 입력으로 해당사항 없음
-class Calculator {
+class Calculator: AbstractOperation {
     
-    let addOperation = AddOperation()
-    let subtractOperation = SubtractOperation()
-    let multiplyOperation = MultiplyOperation()
-    let divideOperation = DivideOperation()
-    let modulusOperation = ModularOperation()
+    var addOperation = AddOperation()
+    var subtractOperation = SubtractOperation()
+    var multiplyOperation = MultiplyOperation()
+    var divideOperation = DivideOperation()
+    var modulusOperation = ModularOperation()
     
     func addition(firstOperand: Float, secondOperand: Float) {
         self.addOperation.perform(firstOperand: firstOperand, secondOperand: secondOperand)
@@ -46,9 +46,10 @@ class Calculator {
         self.divideOperation.perform(firstOperand: firstOperand, secondOperand: secondOperand)
     }
     
-    func modulus(firstOperand: Float, secondOperand: Float) {
+    func modular(firstOperand: Float, secondOperand: Float) {
         self.modulusOperation.perform(firstOperand: firstOperand, secondOperand: secondOperand)
     }
+    
 }
 
 // 계산기 인스턴스 생성
@@ -62,14 +63,15 @@ calculator.divideOperation.perform(firstOperand: 10, secondOperand: 20)
 calculator.modulusOperation.perform(firstOperand: 10, secondOperand: 20)
 
 // MARK: 더하기
-class AddOperation {
-    func perform(firstOperand: Float, secondOperand: Float) {
+struct AddOperation {
+    
+    mutating func perform(firstOperand: Float, secondOperand: Float) {
         // 결과값 저장
         var result = firstOperand + secondOperand
         // 값의 범위 확인
-        var isInRange: Bool = { String(result).count < 16 }()
+        var isInRange = { String(result).count < 16 }()
         // 정수인지 확인
-        var isInteger: Bool = { result.truncatingRemainder(dividingBy: 1) == 0 }()
+        var isInteger = { result.truncatingRemainder(dividingBy: 1) == 0 }()
         
         // 값이 범위 내에 있으며 정수값일 때,
         if isInRange && isInteger {
@@ -83,8 +85,9 @@ class AddOperation {
         }
     }
 }
+
 // MARK: 빼기
-class SubtractOperation {
+struct SubtractOperation {
     func perform(firstOperand: Float, secondOperand: Float) {
         // 결과값 저장
         var result = firstOperand - secondOperand
@@ -106,7 +109,7 @@ class SubtractOperation {
     }
 }
 // MARK: 곱하기
-class MultiplyOperation {
+struct MultiplyOperation {
     func perform(firstOperand: Float, secondOperand: Float) {
         // 결과값 저장
         var result = firstOperand * secondOperand
@@ -128,7 +131,7 @@ class MultiplyOperation {
     }
 }
 // MARK: 나누기
-class DivideOperation {
+struct DivideOperation {
     func perform(firstOperand: Float, secondOperand: Float) {
         // 결과값 저장
         var result = firstOperand / secondOperand
@@ -145,7 +148,7 @@ class DivideOperation {
     }
 }
 // MARK: 나머지 연산
-class ModularOperation {
+struct ModularOperation {
     func perform(firstOperand: Float, secondOperand: Float) {
         // 결과값 저장
         var result = firstOperand.remainder(dividingBy: secondOperand)
@@ -165,4 +168,15 @@ class ModularOperation {
             print("값이 너무 커요!")
         }
     }
+}
+
+/// 계산 결과에 대한 기능등을 구현해야함
+/// 반복적인 코드이지만 필요한 기능임
+/// 추후 타입 메서드로 구현할 가능성도 생각이 듬
+protocol AbstractOperation {
+    func addition(firstOperand: Float, secondOperand: Float)
+    func subtraction(firstOperand: Float, secondOperand: Float)
+    func multiplication(firstOperand: Float, secondOperand: Float)
+    func division(firstOperand: Float, secondOperand: Float)
+    func modular(firstOperand: Float, secondOperand: Float)
 }
